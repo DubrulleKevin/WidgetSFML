@@ -4,7 +4,7 @@ project(WidgetSFML)
 
 # Enable debug symbols by default
 if(CMAKE_BUILD_TYPE STREQUAL "")
-  set(CMAKE_BUILD_TYPE Debug)
+  set(CMAKE_BUILD_TYPE Release)
 endif()
 # (you can also set it on the command line: -D CMAKE_BUILD_TYPE=Release)
 
@@ -16,10 +16,18 @@ file(
         src/*.cpp
 )
 
-# Define sources and executable
-set(EXECUTABLE_NAME "WidgetSFML")
-add_executable(${EXECUTABLE_NAME} ${source_files})
+file(
+		GLOB_RECURSE
+        example_demo_files
+        example/demo/main.cpp
+)
 
+# Define sources and executable
+set(LIBRARY_NAME "WidgetSFML")
+set(EXAMPLE_DEMO_NAME "Demo")
+add_definitions(-DWIDGETSFML_EXPORT)
+add_library(${LIBRARY_NAME} SHARED ${source_files})
+add_executable(${EXAMPLE_DEMO_NAME} ${example_demo_files})
 
 # Detect and add SFML
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
@@ -28,5 +36,6 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
 find_package(SFML 2 REQUIRED system window graphics)
 if(SFML_FOUND)
   include_directories(${SFML_INCLUDE_DIR})
-  target_link_libraries(${EXECUTABLE_NAME} ${SFML_LIBRARIES})
+  target_link_libraries(${LIBRARY_NAME} ${SFML_LIBRARIES})
+  target_link_libraries(${EXAMPLE_DEMO_NAME} ${SFML_LIBRARIES} "${CMAKE_SOURCE_DIR}/build/Release/${LIBRARY_NAME}.lib")
 endif()
