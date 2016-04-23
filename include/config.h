@@ -2,13 +2,13 @@
 
 #if !defined(WIDGETSFML_STATIC)
 
+#ifdef _MSC_VER
+
 // Windows compilers need specific (and different) keywords for export and import
 #define WIDGETSFML_API_EXPORT __declspec(dllexport)
 #define WIDGETSFML_API_IMPORT __declspec(dllimport)
 
 // For Visual C++ compilers, we also need to turn off this annoying C4251 warning
-#ifdef _MSC_VER
-
 #pragma warning(disable: 4251)
 
 #else // Linux, FreeBSD, Mac OS X
