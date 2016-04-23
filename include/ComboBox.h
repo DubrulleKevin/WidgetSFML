@@ -7,7 +7,7 @@
 namespace wsf
 {
 
-    class ComboBox
+    class WIDGETSFML_API ComboBox
         : public AbstractCheck
     {
     public:

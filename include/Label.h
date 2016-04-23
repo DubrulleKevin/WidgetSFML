@@ -6,7 +6,7 @@
 namespace wsf
 {
 
-	class Label :
+	class WIDGETSFML_API Label :
 		public wsf::TextableWidget
 	{
 	public:

@@ -7,7 +7,7 @@
 namespace wsf
 {
 
-	class AbstractLayout
+	class WIDGETSFML_API AbstractLayout
 	{
 	public:
 		using Ptr = std::shared_ptr<AbstractLayout>;

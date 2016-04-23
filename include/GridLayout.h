@@ -6,7 +6,7 @@
 namespace wsf
 {
 
-    class GridLayout :
+    class WIDGETSFML_API GridLayout :
 		public AbstractLayout
     {
     public:

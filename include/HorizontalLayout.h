@@ -6,7 +6,7 @@
 namespace wsf
 {
 
-    class HorizontalLayout :
+    class WIDGETSFML_API HorizontalLayout :
         public AbstractLayout
     {
     public:

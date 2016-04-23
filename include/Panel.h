@@ -6,7 +6,7 @@
 namespace wsf
 {
 
-	class Panel :
+	class WIDGETSFML_API Panel :
 		public AbstractWidget
 	{
 	public:

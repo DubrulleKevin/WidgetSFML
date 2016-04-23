@@ -4,7 +4,7 @@
 namespace wsf
 {
 
-	class VerticalLayout :
+	class WIDGETSFML_API VerticalLayout :
 		public AbstractLayout
 	{
 	public:

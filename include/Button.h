@@ -6,7 +6,7 @@
 namespace wsf
 {
 
-	class Button :
+	class WIDGETSFML_API Button :
 		public TextableWidget, public Clickable
 	{
 	public:

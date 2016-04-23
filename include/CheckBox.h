@@ -8,7 +8,7 @@
 namespace wsf
 {
 
-	class CheckBox :
+	class WIDGETSFML_API CheckBox :
 		public AbstractCheck
 	{
 	public:

@@ -10,7 +10,7 @@
 namespace wsf
 {
 
-	class Drawable :
+	class WIDGETSFML_API Drawable :
 		public sf::Drawable
 	{
 	public:

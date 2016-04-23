@@ -6,7 +6,7 @@
 namespace wsf
 {
 
-	class TextField :
+	class WIDGETSFML_API TextField :
 		public TextableWidget, public Clickable
 	{
 	public:

@@ -8,7 +8,7 @@
 namespace wsf
 {
 
-	class AbstractWidget :
+	class WIDGETSFML_API AbstractWidget :
 		public Drawable
 	{
 	public:

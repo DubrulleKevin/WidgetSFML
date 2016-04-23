@@ -7,7 +7,7 @@
 namespace wsf
 {
 
-	class AbstractCheck :
+	class WIDGETSFML_API AbstractCheck :
 		public TextableWidget, public Clickable
 	{
 	public:

@@ -4,11 +4,13 @@
 #include <functional>
 #include <vector>
 
+#include "config.h"
+
 
 namespace wsf
 {
 
-	class Clickable
+	class WIDGETSFML_API Clickable
 	{
 	public:
 		void setActionOnClick(std::function<void()> const& action);

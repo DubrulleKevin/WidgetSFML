@@ -9,7 +9,7 @@
 namespace wsf
 {
     template<typename T>
-    class PickList : 
+    class WIDGETSFML_API PickList :
 		public AbstractWidget, public Clickable
     {
         public:

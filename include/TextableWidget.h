@@ -6,7 +6,7 @@
 namespace wsf
 {
 
-	class TextableWidget :
+	class WIDGETSFML_API TextableWidget :
 		public AbstractWidget
 	{
 	public:

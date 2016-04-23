@@ -8,7 +8,7 @@
 namespace wsf
 {
 	template<typename T>
-	class ComboGroup :
+	class WIDGETSFML_API ComboGroup :
 		public Drawable
 	{
 	public:
