@@ -29,7 +29,7 @@ namespace wsf
 
 	void Drawable::drawBy(sf::RenderWindow* window)
 	{
-		std::sort(m_instanciatedDrawables.begin(), m_instanciatedDrawables.end(), [](Drawable* left, Drawable* right)
+		std::stable_sort(m_instanciatedDrawables.begin(), m_instanciatedDrawables.end(), [](Drawable* left, Drawable* right)
         {
 			return (left->getZAxis() < right->getZAxis());
 		});
