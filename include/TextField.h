@@ -27,6 +27,7 @@ namespace wsf
 		void unfocus();
 
 		bool m_focused;
+        std::string originalText;
 	};
 
 }

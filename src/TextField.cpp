@@ -24,16 +24,23 @@ namespace wsf
 			if (contains(sf::Mouse::getPosition(*m_parent)))
 			{
 				focus();
+                originalText = getText();
 			}
 			else
 			{
 				unfocus();
 			}
 		}
-		else if (event.type == sf::Event::LostFocus || sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
+        else if (event.type == sf::Event::LostFocus ||
+                 sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
 		{
 			unfocus();
 		}
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+        {
+            unfocus();
+            setText(originalText);
+        }
 
 		if (m_focused && event.type == sf::Event::TextEntered)
 		{
