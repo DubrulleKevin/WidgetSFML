@@ -22,6 +22,7 @@ file(
         GLOB_RECURSE
         source_files
         src/*.cpp
+        include/*
 )
 
 file(
@@ -47,3 +48,7 @@ if(SFML_FOUND)
   target_link_libraries(${LIBRARY_NAME} ${SFML_LIBRARIES})
   target_link_libraries(${EXAMPLE_DEMO_NAME} ${SFML_LIBRARIES} ${LIBRARY_NAME})
 endif()
+
+add_custom_command(TARGET ${LIBRARY_NAME} POST_BUILD
+                   COMMAND ${CMAKE_COMMAND} -E copy_directory
+                       ${CMAKE_SOURCE_DIR}/res $<TARGET_FILE_DIR:${LIBRARY_NAME}>/res)

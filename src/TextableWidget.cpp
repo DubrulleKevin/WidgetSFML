@@ -6,7 +6,7 @@ namespace wsf
 
 	TextableWidget::TextableWidget(sf::Window *parent, sf::String const& text) : AbstractWidget(parent)
 	{
-		setFont("../res/arial.ttf");
+        setFont("res/arial.ttf");
 		setCharacterSize(18);
 		setTextColor(sf::Color::Black);
 		setText(text);

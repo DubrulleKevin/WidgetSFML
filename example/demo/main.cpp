@@ -16,7 +16,7 @@ int main(void)
 	window.setVerticalSyncEnabled(true);
 
 	sf::Image icon;
-	icon.loadFromFile("../res/icon.png");
+    icon.loadFromFile("res/icon.png");
 
 	window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
