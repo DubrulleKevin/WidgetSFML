@@ -6,11 +6,10 @@ namespace wsf
 
 	std::vector<Clickable*> Clickable::m_instanciatedClickables;
 
-	Clickable::Clickable() : m_activated(true), m_inActivatedWidget(false)
+    Clickable::Clickable() :
+        m_activated(true), m_inActivatedWidget(false), m_onClick([](){})
 	{
-		m_instanciatedClickables.push_back(this);
-
-	    m_onClick = [](){};
+        m_instanciatedClickables.push_back(this);
 	}
 
 	Clickable::~Clickable() 

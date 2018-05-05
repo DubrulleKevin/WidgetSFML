@@ -9,7 +9,7 @@ namespace wsf
         setFont("res/arial.ttf");
 		setCharacterSize(18);
 		setTextColor(sf::Color::Black);
-		setText(text);
+        setText(text);
 	}
 
 	TextableWidget::~TextableWidget() {}
@@ -23,7 +23,7 @@ namespace wsf
 
 	void TextableWidget::setTextPosition(sf::Vector2f const& position)
 	{
-		m_text.setPosition(position);
+        m_text.setPosition(position);
 	}
 
 	void TextableWidget::adaptTextPosition()
@@ -36,10 +36,18 @@ namespace wsf
 		setTextPosition(sf::Vector2f(x, y));
 	}
 
-	void TextableWidget::draw(sf::RenderTarget& target, sf::RenderStates states) const
+    void TextableWidget::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	{
-		AbstractWidget::draw(target, states);
-		target.draw(m_text, states);
+        AbstractWidget::draw(target, states);
+
+        sf::Text text = m_text;
+
+        if (getLocalTextSize().x >= getSize().x)
+        {
+            text.setString("...");
+        }
+
+        target.draw(text, states);
 	}
 
 	void TextableWidget::setPosition(sf::Vector2f const& position)
@@ -55,23 +63,23 @@ namespace wsf
 
 	void TextableWidget::setTextColor(sf::Color const color)
 	{ 
-		m_text.setColor(color);
+        m_text.setColor(color);
 	}
 
 	void TextableWidget::setFont(sf::String const& pathToFont)
 	{
 		m_font.loadFromFile(pathToFont);
-		m_text.setFont(m_font);
+        m_text.setFont(m_font);
 	}
 
 	void TextableWidget::setCharacterSize(const unsigned int size)
 	{
-		m_text.setCharacterSize(size);
+        m_text.setCharacterSize(size);
 	}
 
 	void TextableWidget::setStyle(const sf::Uint32 style)
 	{
-		m_text.setStyle(style);
+        m_text.setStyle(style);
 		adaptTextPosition();
 	}
 
@@ -85,7 +93,7 @@ namespace wsf
 		return m_text.getString().toAnsiString();
 	}
 
-	sf::Vector2f TextableWidget::getLocalTextSize()
+    sf::Vector2f TextableWidget::getLocalTextSize() const
 	{
 		sf::String const& str = m_text.getString() + '\n';
 

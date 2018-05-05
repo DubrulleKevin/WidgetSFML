@@ -35,13 +35,13 @@ namespace wsf
 		virtual ~TextableWidget() = 0;
 
 	protected:
-		sf::Vector2f getLocalTextSize();
+        sf::Vector2f getLocalTextSize() const;
 
 		virtual void adaptTextPosition();
 
-		virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+        virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
-		sf::Text m_text;
+        sf::Text m_text;
 
 	private:
 		sf::Font m_font;

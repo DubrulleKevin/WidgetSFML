@@ -22,7 +22,7 @@ namespace wsf
 		bool isInActivatedWidget();
 
 		Clickable();
-		virtual ~Clickable() = 0;
+        virtual ~Clickable();
 
 	protected:
 		virtual void handleAction(sf::Event const& event) = 0;

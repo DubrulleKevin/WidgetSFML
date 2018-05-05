@@ -21,7 +21,7 @@ namespace wsf
             virtual void setPosition(const float x, const float y);
 
             void addItem(std::string const& key, T* value = nullptr);
-			void handleAction(sf::Event const& event);
+            void handleAction(sf::Event const& event);
 
 			std::shared_ptr<T> getSelectedItem();
 			std::shared_ptr<T> getItem(std::string const& key);

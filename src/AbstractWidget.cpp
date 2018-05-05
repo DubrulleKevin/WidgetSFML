@@ -7,12 +7,12 @@ namespace wsf
 
 	AbstractWidget::~AbstractWidget() {}
 
-	sf::Vector2f AbstractWidget::getPosition()
+    sf::Vector2f AbstractWidget::getPosition() const
 	{ 
 		return m_shape.getPosition(); 
 	}
 
-	sf::Vector2f AbstractWidget::getSize()
+    sf::Vector2f AbstractWidget::getSize() const
 	{ 
 		return m_shape.getSize(); 
 	}
@@ -22,7 +22,7 @@ namespace wsf
 		m_shape.setSize(size); 
 	}
 
-	sf::FloatRect AbstractWidget::getBounds()
+    sf::FloatRect AbstractWidget::getBounds() const
 	{
 		return m_shape.getGlobalBounds(); 
 	}
@@ -64,13 +64,8 @@ namespace wsf
 
 	bool AbstractWidget::contains(sf::Vector2i const& point)
 	{
-		if (point.x > getPosition().x && point.x < getPosition().x + getSize().x && 
-			point.y > getPosition().y && point.y < getPosition().y + getSize().y)
-		{
-			return true;
-		}
-
-		return false;
+        return point.x > getPosition().x && point.x < getPosition().x + getSize().x &&
+            point.y > getPosition().y && point.y < getPosition().y + getSize().y;
 	}
 
 	sf::Color AbstractWidget::getColor()

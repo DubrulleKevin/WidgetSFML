@@ -48,7 +48,7 @@
 			}
         }
 
-		target.draw(m_arrow);
+        target.draw(m_arrow);
     }
 
 	template<typename T>

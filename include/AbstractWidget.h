@@ -15,15 +15,15 @@ namespace wsf
 
 		using Ptr = std::shared_ptr<AbstractWidget>;
 
-		sf::Vector2f getPosition();
+        sf::Vector2f getPosition() const;
 		virtual void setPosition(sf::Vector2f const& position);
 		virtual void setPosition(const float x, const float y);
 
-		sf::Vector2f getSize();
+        sf::Vector2f getSize() const;
 		virtual void setSize(sf::Vector2f const& size);
 		virtual void setSize(const float x, const float y);
 
-		sf::FloatRect getBounds();
+        sf::FloatRect getBounds() const;
 
 		void setOutlineThickness(const float thickness);
 

@@ -79,6 +79,8 @@ int main(void)
 	wsf::Button::Ptr testBoutonH2 = wsf::Button::create(&window, "Test");
 	wsf::Button::Ptr testBoutonH3 = wsf::Button::create(&window, "Test");
 	wsf::Button::Ptr testBoutonH4 = wsf::Button::create(&window, "Test");
+    wsf::Button::Ptr testBoutonH5 = wsf::Button::create(&window, "totoo");
+    wsf::Button::Ptr testBoutonH6 = wsf::Button::create(&window, "Test");
 
 	testPanelH->setLayout(wsf::HorizontalLayout::create(), sf::Vector2f(10, 10));
 
@@ -86,6 +88,8 @@ int main(void)
 	testPanelH->addWidget(testBoutonH2);
 	testPanelH->addWidget(testBoutonH3);
 	testPanelH->addWidget(testBoutonH4);
+    testPanelH->addWidget(testBoutonH5);
+    testPanelH->addWidget(testBoutonH6);
 
 	wsf::Panel::Ptr testPanelG = wsf::Panel::create(&window);
 	testPanelG->setPosition(50, 400);
