@@ -6,7 +6,7 @@ namespace wsf
 
 	TextableWidget::TextableWidget(sf::Window *parent, sf::String const& text) : AbstractWidget(parent)
 	{
-        setFont("res/arial.ttf");
+        setFont("../res/arial.ttf");
 		setCharacterSize(18);
 		setTextColor(sf::Color::Black);
         setText(text);
@@ -40,14 +40,7 @@ namespace wsf
 	{
         AbstractWidget::draw(target, states);
 
-        sf::Text text = m_text;
-
-        if (getLocalTextSize().x >= getSize().x)
-        {
-            text.setString("...");
-        }
-
-        target.draw(text, states);
+        target.draw(m_text, states);
 	}
 
 	void TextableWidget::setPosition(sf::Vector2f const& position)
@@ -63,7 +56,7 @@ namespace wsf
 
 	void TextableWidget::setTextColor(sf::Color const color)
 	{ 
-        m_text.setColor(color);
+        m_text.setFillColor(color);
 	}
 
 	void TextableWidget::setFont(sf::String const& pathToFont)
