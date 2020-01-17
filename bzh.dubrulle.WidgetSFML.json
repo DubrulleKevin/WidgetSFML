@@ -1,0 +1,35 @@
+{
+    "app-id": "bzh.dubrulle.WidgetSFML",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "19.08",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "./Demo",
+    "modules": [
+        {
+	    "name": "sfml",
+            "cleanup": [ "/bin" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/SFML/SFML.git",
+                    "tag": "2.5.1"
+                }
+            ],
+            "buildsystem": "cmake"
+        },
+        {
+        "name": "WidgetSFML",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/DubrulleKevin/WidgetSFML.git"
+                }
+            ],
+            "buildsystem": "cmake"
+        }
+    ],
+    "finish-args": [
+  	 "--socket=x11",
+	 "--device=dri"
+    ]
+}

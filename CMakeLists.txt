@@ -52,3 +52,11 @@ endif()
 add_custom_command(TARGET ${LIBRARY_NAME} POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy_directory
                        ${CMAKE_SOURCE_DIR}/res $<TARGET_FILE_DIR:${LIBRARY_NAME}>/res)
+
+install(TARGETS ${LIBRARY_NAME}
+    DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
+    )
+
+install(TARGETS ${EXAMPLE_DEMO_NAME}
+    DESTINATION ${CMAKE_INSTALL_PREFIX}/bin
+    )
