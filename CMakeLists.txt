@@ -18,6 +18,8 @@ endif()
 
 include_directories("include")
 
+add_compile_definitions(PREFIX=${CMAKE_INSTALL_PREFIX})
+
 file(
         GLOB_RECURSE
         source_files
