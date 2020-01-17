@@ -51,7 +51,7 @@ endif()
 
 add_custom_command(TARGET ${LIBRARY_NAME} POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy_directory
-                       ${CMAKE_SOURCE_DIR}/res $<TARGET_FILE_DIR:${LIBRARY_NAME}>/res)
+                   ${CMAKE_SOURCE_DIR}/res $<TARGET_FILE_DIR:${LIBRARY_NAME}>/../share/WidgetSFML/res)
 
 install(TARGETS ${LIBRARY_NAME}
     DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
@@ -59,8 +59,4 @@ install(TARGETS ${LIBRARY_NAME}
 
 install(TARGETS ${EXAMPLE_DEMO_NAME}
     DESTINATION ${CMAKE_INSTALL_PREFIX}/bin
-    )
-
-install(TARGETS ${CMAKE_SOURCE_DIR}/res
-    DESTINATION ${CMAKE_INSTALL_PREFIX}/share/WidgetSFML
     )
