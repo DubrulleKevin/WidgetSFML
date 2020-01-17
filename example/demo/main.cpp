@@ -16,7 +16,9 @@ int main(void)
 	window.setVerticalSyncEnabled(true);
 
 	sf::Image icon;
-    icon.loadFromFile("PREFIX/share/WidgetSFML/res/icon.png");
+    sf::String prefix = PREFIX;
+    sf::String baseIconPath = "/share/WidgetSFML/res/icon.png";
+    icon.loadFromFile(prefix + baseIconPath);
 
 	window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 

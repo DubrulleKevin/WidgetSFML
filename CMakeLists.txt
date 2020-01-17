@@ -18,7 +18,7 @@ endif()
 
 include_directories("include")
 
-add_compile_definitions(PREFIX=${CMAKE_INSTALL_PREFIX})
+add_definitions(-DPREFIX="${CMAKE_INSTALL_PREFIX}")
 
 file(
         GLOB_RECURSE

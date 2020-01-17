@@ -6,7 +6,9 @@ namespace wsf
 
 	TextableWidget::TextableWidget(sf::Window *parent, sf::String const& text) : AbstractWidget(parent)
 	{
-        setFont("PREFIX/share/WidgetSFML/res/arial.ttf");
+        sf::String prefix = PREFIX;
+        sf::String baseFontPath = "/share/WidgetSFML/res/arial.ttf";
+        setFont(prefix + baseFontPath);
 		setCharacterSize(18);
 		setTextColor(sf::Color::Black);
         setText(text);
