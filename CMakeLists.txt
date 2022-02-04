@@ -63,7 +63,7 @@ install(TARGETS ${EXAMPLE_DEMO_NAME}
     DESTINATION ${CMAKE_INSTALL_PREFIX}/bin
     )
 
-install(FILES ${CMAKE_SOURCE_DIR}/res/arial.ttf ${CMAKE_SOURCE_DIR}/res/icon.png
+install(FILES ${CMAKE_SOURCE_DIR}/share/WidgetSFML/res/arial.ttf ${CMAKE_SOURCE_DIR}/share/WidgetSFML/res/icon.png
     DESTINATION ${CMAKE_INSTALL_PREFIX}/share/WidgetSFML/res/
     )
 
